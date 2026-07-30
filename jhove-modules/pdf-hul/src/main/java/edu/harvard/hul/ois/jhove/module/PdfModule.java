@@ -3307,12 +3307,12 @@ public class PdfModule extends ModuleBase {
             if (xobj instanceof PdfDictionary) {
                 PdfObject obj = ((PdfDictionary) xobj).get("U");
                 if (obj instanceof PdfSimpleObject) {
-                    alist.add(new Property("Name", PropertyType.DOUBLE, ((PdfSimpleObject) obj).getDoubleValue()));
+                    alist.add(new Property("Units", PropertyType.STRING, ((PdfSimpleObject) obj).getStringValue()));
                 }
                 obj = ((PdfDictionary) xobj).get("C");
                 if (obj instanceof PdfSimpleObject) {
                     alist.add(
-                            new Property("Coefficient", PropertyType.STRING, ((PdfSimpleObject) obj).getStringValue()));
+                            new Property("ConversionFactor", PropertyType.DOUBLE, ((PdfSimpleObject) obj).getDoubleValue()));
                 }
             }
         }
